@@ -8,6 +8,9 @@
     <title>sye.bio</title>
 </head>
 <body style="background-image: url('https://i.pinimg.com/originals/9b/54/cc/9b54cc14f3c09e96ab2212273de83c63.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+     <div id="overlay">
+    Click to enter
+    </div>  
     <main>
         <div class="container">
             <div class="audio-bg">
@@ -135,22 +138,32 @@
                 </div>
             </div>            
     </main>
-    <script>
-        const audio = document.getElementById("myAudio");
-        const audioControl = document.getElementById("audio-control");
+      <script>
+      // Audio control
+      const audio = document.getElementById("myAudio");
+      const audioControl = document.getElementById("audio-control");
 
-        audioControl.addEventListener("click", function() {
-            if (audio.muted) {
-                audio.muted = false;
-                audio.play(); // Start playing the audio
-                audioControl.innerHTML = '<svg fill="#d8d8d8" width="22px" height="22px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m2 7.5v3c0 .8.6 1.5 1.4 1.5h2.3l3.2 2.8c.1.1.3.2.4.2s.2 0 .3-.1c.2-.1.4-.4.4-.7v-.9l-7.2-7.2c-.5.2-.8.8-.8 1.4zm8 2v-5.8c0-.3-.1-.5-.4-.7-.1 0-.2 0-.3 0s-.3 0-.4.2l-2.8 2.5-4.1-4.1-1 1 3.4 3.4 5.6 5.6 3.6 3.6 1-1z" fill-rule="evenodd"/></svg>';
-            } else {
-                audio.muted = true;
-                audio.pause(); // Pause the audio
-                audioControl.innerHTML = '<svg width="18px" height="18px" viewBox="-1 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-65.000000, -3803.000000)" fill="#d8d8d8"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M18.074,3650.7335 L12.308,3654.6315 C10.903,3655.5815 9,3654.5835 9,3652.8985 L9,3645.1015 C9,3643.4155 10.903,3642.4185 12.308,3643.3685 L18.074,3647.2665 C19.306,3648.0995 19.306,3649.9005 18.074,3650.7335" id="play-[#1000]"></path></g></g></g></svg>';
-            }
-        });
-    </script>
+      audioControl.addEventListener("click", () => {
+          if (audio.paused) {
+              audio.muted = false;
+              audio.play();
+              audioControl.innerHTML = `<svg width="18px" height="18px" viewBox="-1 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-65.000000, -3803.000000)" fill="#d8d8d8"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M18.074,3650.7335 L12.308,3654.6315 C10.903,3655.5815 9,3654.5835 9,3652.8985 L9,3645.1015 C9,3643.4155 10.903,3642.4185 12.308,3643.3685 L18.074,3647.2665 C19.306,3648.0995 19.306,3649.9005 18.074,3650.7335" id="play-[#1000]"></path></g></g></g></svg>`;
+          } else {
+              audio.muted = true;
+              audio.pause();
+              audioControl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 3h18v18H3z" fill="none"/><path d="M11 15.27V8.73L15.39 12L11 15.27M9 8v8h2V8H9z"/></svg>`;
+          }
+      });
+
+      // Overlay control
+      const overlay = document.getElementById("overlay");
+
+      overlay.addEventListener("click", () => {
+          overlay.classList.add("hidden");
+          audio.muted = false;
+          audio.play();
+      });
+  </script>
 
 <script>
     var txt = 'Profile Made with Drilla.lol';
