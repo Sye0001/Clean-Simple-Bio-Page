@@ -31,6 +31,7 @@
         }
     </style>
   </head>
+        <!-- BACKGROUND IMAGE -->
   <body style="background-image: url('https://i.pinimg.com/originals/9b/54/cc/9b54cc14f3c09e96ab2212273de83c63.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <div id="overlay">
       Click to enter
@@ -42,6 +43,7 @@
                   <svg fill='#d8d8d8' width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m2 7.5v3c0 .8.6 1.5 1.4 1.5h2.3l3.2 2.8c.1.1.3.2.4.2s.2 0 .3-.1c.2-.1.4-.4.4-.7v-.9l-7.2-7.2c-.5.2-.8.8-.8 1.4zm8 2v-5.8c0-.3-.1-.5-.4-.7-.1 0-.2 0-.3 0s-.3 0-.4.2l-2.8 2.5-4.1-4.1-1 1 3.4 3.4 5.6 5.6 3.6 3.6 1-1z" fill-rule="evenodd"/></svg>
               </a>
                   <audio id="myAudio" loop muted>
+                    <!-- ADD UR MUSIC HERE -->
                       <source src="https://cdn.discordapp.com/attachments/1206489703457628182/1209333548268388392/bio_site_background.mp4?ex=65e68aa2&is=65d415a2&hm=210b690a28e18568ddf734f5f2fcfbb35f46079ca9b8802cfe90250061b7fe92&" type="audio/mpeg">
                       Your browser does not support the audio element.
                   </audio>
@@ -52,6 +54,7 @@
                           <img src="https://i.pinimg.com/236x/30/51/8e/30518e83b891db3e5a15cb02885c5686.jpg">
                       </div>
                       <div class="username">
+                            <!-- USERNAME -->
                           <a>Sye</a>
                       </div>
                       <div class="status">
@@ -190,12 +193,13 @@
     </script>
 
   <script>
-      var txt = 'locked in.';
-      var speed = 200; // Slower speed
-      var eraseSpeed = 80; // Speed for erasing
+    //typewritter text
+      var txt = 'locked in.'; // Edit ur about me here
+      var speed = 200; 
+      var eraseSpeed = 80;
       var loopCount = 0;
-      var maxLoop = 0; // Loop indefinitely
-      var forward = true; // Indicates typing forward or erasing
+      var maxLoop = 0; 
+      var forward = true; 
       
       function typeWriter() {
         var typewriter = document.getElementById("typewriter");
@@ -207,7 +211,7 @@
             setTimeout(typeWriter, speed);
           } else {
             forward = false;
-            setTimeout(typeWriter, speed * 3); // Pause before erasing
+            setTimeout(typeWriter, speed * 3); 
           }
         } else {
           if (typewriter.innerHTML.length > 0) {
@@ -215,13 +219,11 @@
             setTimeout(typeWriter, eraseSpeed);
           } else {
             forward = true;
-            // No need to check loop count if maxLoop is set to 0
-            setTimeout(typeWriter, speed * 3); // Pause before starting the next loop
+            setTimeout(typeWriter, speed * 3); 
           }
         }
       }
       
-      // Call the typeWriter function when the page loads
       window.onload = function() {
         typeWriter();
       };
